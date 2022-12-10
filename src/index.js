@@ -66,8 +66,25 @@ app.post('/todos', checksExistsUserAccount, (request, response) => {
 });
 
 app.put('/todos/:id', checksExistsUserAccount, (request, response) => {
-  // Complete aqui
+  const { user } = request;
+  const { id } = request.params;
+
+  const { title, deadline } = request.body;
+
+  user.todos.forEach(task => {
+    if (task.id === id) {
+      task.title = title;
+      task.deadline = deadline;
+    }
+  });
+
+  return response.status(201).send();
 });
+
+app.get('/todos/:id', checksExistsUserAccount, (request, response) => {
+  const { user } = request;
+  return response.json(user.todos);
+})
 
 app.patch('/todos/:id/done', checksExistsUserAccount, (request, response) => {
   // Complete aqui
