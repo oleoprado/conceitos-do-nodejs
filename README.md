@@ -1,8 +1,8 @@
-# **TO-DO LIST**
+# **TO-DO LIST :spiral_notepad:**
 
-#### *Gerenciador de Tarefas*
+## *Gerenciador de Tarefas*
 
-##### Será permitida a criação de um usuário com `name` e `username`, bem como fazer o `CRUD` de to-do.
+### Será permitida a criação de um usuário com `name` e `username`, bem como fazer o `CRUD` de to-do.
 
 * Criar um novo todo;
 * Listar todos os todos;
@@ -10,4 +10,4 @@
 * Marcar um todo como feito;
 * Excluir um todo;
 
-*Tudo isso para cada usuário em específico (o `username` será passado pelo header).* :white_check_mark:
+*Tudo isso para cada usuário em específico (o `username` será passado pelo header).* 
