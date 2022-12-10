@@ -28,7 +28,7 @@ app.post('/users', (request, response) => {
   const userAlreadyExist = users.some((user) => user.username === username);
 
   if (userAlreadyExist) response.status(400).json({ error: "User already exist!" });
-  
+
   const user = {
     id: uuidv4(),
     name,
@@ -95,7 +95,16 @@ app.patch('/todos/:id/done', checksExistsUserAccount, (request, response) => {
 });
 
 app.delete('/todos/:id', checksExistsUserAccount, (request, response) => {
-  // Complete aqui
+  const { user } = request;
+  const { id } = request.params;
+
+  const task = user.todos.find((task) => task.id === id);
+
+  if (!task) response.status(404).json({ error: "Task does not exists!" });
+
+  user.todos.splice(task, 1);
+
+  return response.status(202).send();
 });
 
 module.exports = app;
