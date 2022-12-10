@@ -81,13 +81,17 @@ app.put('/todos/:id', checksExistsUserAccount, (request, response) => {
   return response.status(201).send();
 });
 
-app.get('/todos/:id', checksExistsUserAccount, (request, response) => {
-  const { user } = request;
-  return response.json(user.todos);
-})
-
 app.patch('/todos/:id/done', checksExistsUserAccount, (request, response) => {
-  // Complete aqui
+  const { user } = request;
+  const { id } = request.params;
+
+  const { done } = request.body;
+
+  user.todos.forEach(task => {
+    if (task.id === id) task.done = true;
+  });
+
+  return response.status(201).send();
 });
 
 app.delete('/todos/:id', checksExistsUserAccount, (request, response) => {
