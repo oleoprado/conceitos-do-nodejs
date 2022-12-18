@@ -25,7 +25,7 @@ Essa será uma aplicação para gerenciar tarefas(to-do), será permitida a cria
 
 ### 📝 Clonagem e uso
 
-Para clonar o repositório rode `https://github.com/oleoprado/desafio-02-trilha-nodejs-trabalhando-com-middlewares-rocketseat.git` no seu terminal.
+Para clonar o repositório rode `https://github.com/oleoprado/desafio-01-trilha-nodejs-conceitos-do-node-rocketseat.git` no seu terminal.
 Entre na pasta do projeto e rode `yarn` no seu terminal para instalar as dependências.
 
 #### Uso
